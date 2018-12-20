@@ -53,6 +53,9 @@ dataFrame<- data.frame(Id = testHouse$Id, SalePrice = predictedRF)
 write.csv(dataFrame, "HousePriceRF.csv", quote = F, row.names = F)
 
 
+summary(model)
+
+
 
 
 
