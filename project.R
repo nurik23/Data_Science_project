@@ -41,19 +41,20 @@ model <- lm(formula = SalePrice ~ MSSubClass + LotFrontage + LotArea +
               TotRmsAbvGrd + Functional + Fireplaces + GarageYrBlt + GarageCars + 
               GarageCond + WoodDeckSF + ScreenPorch + YrSold + SaleCondition, 
             data = trainHouse)
-#summary(model)
+
 predicted <- predict(model, testHouse)
+RMSE(predicted)
+summary(model)
 
 dataFrame <- data.frame(Id = testHouse$Id, SalePrice = predicted)
 write.csv(dataFrame, "housePrice1.csv", quote = F, row.names = F)
-# Ñëó÷àéíûé Ëåñ
+
+
 modelRF<- randomForest(SalePrice ~ .,trainHouse,type = "regression",ntree =500,do.trace=TRUE)
 predictedRF <- predict(modelRF, testHouse)
 dataFrame<- data.frame(Id = testHouse$Id, SalePrice = predictedRF)
 write.csv(dataFrame, "HousePriceRF.csv", quote = F, row.names = F)
 
-
-summary(model)
 
 
 
