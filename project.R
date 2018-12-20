@@ -52,8 +52,6 @@ write.csv(dataFrame, "housePrice1.csv", quote = F, row.names = F)
 
 modelRF<- randomForest(SalePrice ~ .,trainHouse,type = "regression",ntree =500,do.trace=TRUE)
 predictedRF <- predict(modelRF, testHouse)
-dataFrame<- data.frame(Id = testHouse$Id, SalePrice = predictedRF)
-write.csv(dataFrame, "HousePriceRF.csv", quote = F, row.names = F)
 
 
 
