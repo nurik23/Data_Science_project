@@ -505,7 +505,7 @@ SaleCondition: Condition of sale
    
 ## Importing libraries
 
-{r message=FALSE, warning=FALSE, paged.print=FALSE, library(dplyr)
+message=FALSE, warning=FALSE, paged.print=FALSE, library(dplyr)
 library(xgboost)
 library(missForest)
 library(caret)
